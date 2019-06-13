@@ -1,65 +1,74 @@
 
-行动  Move and draw
-      | forward | fd  
-      | backward | bk | back
-      | right | rt
-      | left | lt
-      | goto | setpos | setposition
-      | setx
-      | sety
-      | setheading | seth
-      | home
-      | circle
-      | dot
-      | stamp
-      | clearstamp
-      | clearstamps
-      | undo
-      | speed
+# 行动  Move and draw
 
-行动  Tell Turtle state
-      | position | pos
-      | towards
-      | xcor
-      | ycor
-      | heading
-      | distance
+    | forward | fd  
+    | backward | bk | back
+    | right | rt
+    | left | lt
+    | goto | setpos | setposition
+    | setx
+    | sety
+    | setheading | seth
+    | home
+    | circle
+    | dot
+    | stamp
+    | clearstamp
+    | clearstamps
+    | undo
+    | speed
 
-行动  Setting and measurement
-      | degrees
-      | radians
+# 行动  Tell Turtle state
+
+    | position | pos
+    | towards
+    | xcor
+    | ycor
+    | heading
+    | distance
+
+# 行动  Setting and measurement
+
+    | degrees
+    | radians
 
 
-画笔   Drawing state
+# 画笔   Drawing state
+
       | pendown | pd | down
       | penup | pu | up
       | pensize | width
       | pen
       | isdown
 
-画笔   Color control
+# 画笔   Color control
+
       | color
       | pencolor
       | fillcolor
 
-画笔   Filling
+# 画笔   Filling
+
       | filling
       | begin_fill
       | end_fill
 
-画笔   More drawing control
+# 画笔   More drawing control
+
       | reset
       | clear
       | write
 
 
 
-乌龟状态   Visibility
+# 乌龟状态   Visibility
+
       | showturtle | st
       | hideturtle | ht
       | isvisible
 
-乌龟状态  Appearance
+# 乌龟状态  Appearance
+
       | shape
       | resizemode
       | shapesize | turtlesize
@@ -70,12 +79,14 @@
       | shapetransform
       | get_shapepoly
 
-乌龟Using events
+# 乌龟Using events
+
    | onclick
    | onrelease
    | ondrag
 
-乌龟Special Turtle methods
+# 乌龟Special Turtle methods
+
    | begin_poly
    | end_poly
    | get_poly
@@ -89,7 +100,8 @@
 Methods of TurtleScreen/Screen
 ------------------------------
 
-Window control
+# Window control
+
    | bgcolor
    | bgpic
    | clear | clearscreen
@@ -97,12 +109,14 @@ Window control
    | screensize
    | setworldcoordinates
 
-Animation control
+# Animation control
+
    | delay
    | tracer
    | update
 
-Using screen events
+# Using screen events
+
    | listen
    | onkey | onkeyrelease
    | onkeypress
@@ -110,7 +124,8 @@ Using screen events
    | ontimer
    | mainloop | done
 
-Settings and special methods
+# Settings and special methods
+
    | mode
    | colormode
    | getcanvas
@@ -120,11 +135,13 @@ Settings and special methods
    | window_height
    | window_width
 
-Input methods
+# Input methods
+
    | textinput
    | numinput
 
-Methods specific to Screen
+# Methods specific to Screen
+
    | bye
    | exitonclick
    | setup
