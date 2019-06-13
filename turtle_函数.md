@@ -35,66 +35,66 @@
 
 # 画笔   Drawing state
 
-      | pendown | pd | down
-      | penup | pu | up
-      | pensize | width
-      | pen
-      | isdown
+    | pendown | pd | down
+    | penup | pu | up
+    | pensize | width
+    | pen
+    | isdown
 
 # 画笔   Color control
 
-      | color
-      | pencolor
-      | fillcolor
+    | color
+    | pencolor
+    | fillcolor
 
 # 画笔   Filling
 
-      | filling
-      | begin_fill
-      | end_fill
+    | filling
+    | begin_fill
+    | end_fill
 
 # 画笔   More drawing control
 
-      | reset
-      | clear
-      | write
+    | reset
+    | clear
+    | write
 
 
 
 # 乌龟状态   Visibility
 
-      | showturtle | st
-      | hideturtle | ht
-      | isvisible
+    | showturtle | st
+    | hideturtle | ht
+    | isvisible
 
 # 乌龟状态  Appearance
 
-      | shape
-      | resizemode
-      | shapesize | turtlesize
-      | shearfactor
-      | settiltangle
-      | tiltangle
-      | tilt
-      | shapetransform
-      | get_shapepoly
+    | shape
+    | resizemode
+    | shapesize | turtlesize
+    | shearfactor
+    | settiltangle
+    | tiltangle
+    | tilt
+    | shapetransform
+    | get_shapepoly
 
 # 乌龟Using events
 
-   | onclick
-   | onrelease
-   | ondrag
+    | onclick
+    | onrelease
+    | ondrag
 
 # 乌龟Special Turtle methods
 
-   | begin_poly
-   | end_poly
-   | get_poly
-   | clone
-   | getturtle | getpen
-   | getscreen
-   | setundobuffer
-   | undobufferentries
+    | begin_poly
+    | end_poly
+    | get_poly
+    | clone
+    | getturtle | getpen
+    | getscreen
+    | setundobuffer
+    | undobufferentries
 
 
 Methods of TurtleScreen/Screen
@@ -102,48 +102,48 @@ Methods of TurtleScreen/Screen
 
 # Window control
 
-   | bgcolor
-   | bgpic
-   | clear | clearscreen
-   | reset | resetscreen
-   | screensize
-   | setworldcoordinates
+    | bgcolor
+    | bgpic
+    | clear | clearscreen
+    | reset | resetscreen
+    | screensize
+    | setworldcoordinates
 
 # Animation control
 
-   | delay
-   | tracer
-   | update
+    | delay
+    | tracer
+    | update
 
 # Using screen events
 
-   | listen
-   | onkey | onkeyrelease
-   | onkeypress
-   | onclick | onscreenclick
-   | ontimer
-   | mainloop | done
+    | listen
+    | onkey | onkeyrelease
+    | onkeypress
+    | onclick | onscreenclick
+    | ontimer
+    | mainloop | done
 
 # Settings and special methods
 
-   | mode
-   | colormode
-   | getcanvas
-   | getshapes
-   | register_shape | addshape
-   | turtles
-   | window_height
-   | window_width
+    | mode
+    | colormode
+    | getcanvas
+    | getshapes
+    | register_shape | addshape
+    | turtles
+    | window_height
+    | window_width
 
 # Input methods
 
-   | textinput
-   | numinput
+    | textinput
+    | numinput
 
 # Methods specific to Screen
 
-   | bye
-   | exitonclick
-   | setup
-   | title
+    | bye
+    | exitonclick
+    | setup
+    | title
 
