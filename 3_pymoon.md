@@ -29,7 +29,7 @@ moon 月相
 [https://github.com/chubin/pyphoon](https://github.com/chubin/pyphoon) 或者 [GitHub](https://github.com/chubin/pyphoon/releases).
 
 
-Centos下
+Centos下 用 pyphoon 
 
 ```bash
 cd /tmp/
@@ -41,6 +41,17 @@ python  pyphoon 20140702
 python  pyphoon 20080111
 ```
 
+
+Centos下 用 pom.pl 
+```bash
+perl  /root/bin/pom_moon.pl  -e
+```
+
+Centos7  一个 月亮的游戏
+```bash
+yum install -y moon-buggy
+moon-buggy 
+```
 
 
 
