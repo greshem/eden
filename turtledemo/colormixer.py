@@ -49,7 +49,9 @@ def main():
     writer.ht()
     writer.pu()
     writer.goto(1,1.15)
-    writer.write("DRAG!",align="center",font=("Arial",30,("bold","italic")))
+
+    #writer.write("DRAG!",align="center",font=("Arial",30,("bold","italic")))
+    writer.write("拖拽就可以实现颜色变化", align="center", font=("微软雅黑", 14, "bold"))
     return "EVENTLOOP"
 
 if __name__ == "__main__":

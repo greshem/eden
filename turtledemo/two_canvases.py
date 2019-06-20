@@ -5,6 +5,7 @@ distinct canvases in a separate windows. The
 new window must be separately closed in
 addition to pressing the STOP button.
 """
+# 对称的两个乌龟 
 
 from turtle import TurtleScreen, RawTurtle, TK
 
@@ -20,8 +21,8 @@ def main():
     s2 = TurtleScreen(cv2)
     s2.bgcolor(1, 0.85, 0.85)
 
-    p = RawTurtle(s1)
-    q = RawTurtle(s2)
+    p = RawTurtle(s1) #上面的乌龟
+    q = RawTurtle(s2) #下面的乌龟
 
     p.color("red", (1, 0.85, 0.85))
     p.width(3)
@@ -30,21 +31,23 @@ def main():
 
     for t in p,q:
         t.shape("turtle")
-        t.lt(36)
+        t.left(36)
 
-    q.lt(180)
+    q.left(180)
 
     for t in p, q:
         t.begin_fill()
-    for i in range(5):
+
+    for i in range(5): #画五边形
         for t in p, q:
-            t.fd(50)
-            t.lt(72)
+            t.forward(50)
+            t.left(72)
+
     for t in p,q:
         t.end_fill()
-        t.lt(54)
-        t.pu()
-        t.bk(50)
+        t.left(54)
+        t.penup()
+        t.back(50)
 
     return "EVENTLOOP"
 

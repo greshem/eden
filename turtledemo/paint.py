@@ -1,26 +1,12 @@
 #! /usr/bin/python3.6
-"""       turtle-example-suite:
-
-            tdemo_paint.py
-
-A simple  event-driven paint program
-
-- left mouse button moves turtle
-- middle mouse button changes color
-- right mouse button toogles betweem pen up
-(no line drawn when the turtle moves) and
-pen down (line is drawn). If pen up follows
-at least two pen-down moves, the polygon that
-includes the starting point is filled.
- -------------------------------------------
- Play around by clicking into the canvas
- using all three mouse buttons.
- -------------------------------------------
-          To exit press STOP button
- -------------------------------------------
+"""       
+1. 左边的鼠标移动乌龟
+2. 中间的鼠标切换颜色
+3. 右边的鼠标开始填充
 """
 from turtle import *
 
+# 鼠标 
 def switchupdown(x=0, y=0):
     if pen()["pendown"]:
         end_fill()
@@ -43,6 +29,7 @@ def main():
     colors=["red", "green", "blue", "yellow"]
     color(colors[0])
     switchupdown()
+
     onscreenclick(goto,1)
     onscreenclick(changecolor,2)
     onscreenclick(switchupdown,3)

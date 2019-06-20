@@ -14,20 +14,20 @@ command.
 from turtle import *
 
 def yin(radius, color1, color2):
-    width(3)
-    color("black", color1)
-    begin_fill()
-    circle(radius/2., 180)
-    circle(radius, 180)
+    width(3)                #画笔为3
+    color("black", color1)  #设置成黑色
+    begin_fill()            #开始填充
+    circle(radius/2., 180)  #画180度的一个半圆 半径为 radius/2
+    circle(radius, 180)     #再
     left(180)
     circle(-radius/2., 180)
     end_fill()
-    left(90)
-    up()
-    forward(radius*0.35)
-    right(90)
-    down()
-    color(color1, color2)
+    left(90)            #左转
+    up()                #往上
+    forward(radius*0.35) #往前面走
+    right(90)            #右转
+    down()               #往下走
+    color(color1, color2) #用 color1  color2 填充 
     begin_fill()
     circle(radius*0.15)
     end_fill()
