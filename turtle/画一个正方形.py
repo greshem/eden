@@ -3,13 +3,14 @@ import turtle
 import random
 aj=turtle.Pen()
 y=0
-aj.speed(5)
+aj.speed(1)
 turtle.screensize(600,800)
 turtle.bgcolor("black")
 aj.shape("turtle")
+aj.pensize(5)
 
 x=aj.xcor()
-for each in range(1,100,1):
+for each in range(1,2,1):
     
     aj.color(random.random(),random.random(),random.random())
 
@@ -29,4 +30,3 @@ for each in range(1,100,1):
 	
 	
     aj.end_fill()
-		

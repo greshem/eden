@@ -7,9 +7,10 @@ aj.speed(100)
 turtle.screensize(600,800)
 turtle.bgcolor("black")
 aj.shape("turtle")
+aj.pensize(5)
 
 x=aj.xcor()
-for each in range(1,1000,1):
+for each in range(1,2,1):
     
     aj.color(random.random(),random.random(),random.random())
 
