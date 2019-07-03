@@ -12,7 +12,7 @@
     pygame.cursors.load_xbm()
 
 # display
-    pygame.display.Info()
+    pygame.display.Info()  #显示器鑫鑫
     pygame.display.flip()
     pygame.display.get_active()
     pygame.display.get_caption()
@@ -36,13 +36,13 @@
 # draw
     pygame.draw.aaline()
     pygame.draw.aalines()
-    pygame.draw.arc()
-    pygame.draw.circle()
-    pygame.draw.ellipse()
-    pygame.draw.line()
-    pygame.draw.lines()
-    pygame.draw.polygon()
-    pygame.draw.rect()
+    pygame.draw.arc()       #角
+    pygame.draw.circle()    #画圆
+    pygame.draw.ellipse()   #椭圆
+    pygame.draw.line()      #线段
+    pygame.draw.lines()     #线段
+    pygame.draw.polygon()   #多边形
+    pygame.draw.rect()      #矩形
 
 # encode
     pygame.encode_file_path()
@@ -97,8 +97,8 @@
 
 # font 字体
     pygame.font.SysFont()
-    pygame.font.get_default_font()
-    pygame.font.get_fonts()
+    pygame.font.get_default_font() #获取默认字体
+    pygame.font.get_fonts() #获取字体
     pygame.font.match_font()
 
 # freetype
@@ -197,7 +197,7 @@
     pygame.pixelcopy.map_array()
     pygame.pixelcopy.surface_to_array()
 
-    pygame.quit()
+    pygame.quit()           #退出
     pygame.register_quit()
     pygame.scrap.contains()
     pygame.scrap.get_types()
@@ -214,15 +214,15 @@
     pygame.sndarray.use_arraytype()
 
 # sprite  精灵
-    pygame.sprite.GroupSingle()
-    pygame.sprite.OrderedUpdates()
-    pygame.sprite.collide_circle()
+    pygame.sprite.GroupSingle()     #精灵组
+    pygame.sprite.OrderedUpdates()  #
+    pygame.sprite.collide_circle()  #圆形碰撞检测
     pygame.sprite.collide_circle_ratio()
-    pygame.sprite.collide_mask()
-    pygame.sprite.collide_rect()
+    pygame.sprite.collide_mask()    
+    pygame.sprite.collide_rect()    #矩形检测
     pygame.sprite.collide_rect_ratio()
-    pygame.sprite.groupcollide()
-    pygame.sprite.spritecollide()
+    pygame.sprite.groupcollide()    #精灵组 碰撞检测
+    pygame.sprite.spritecollide()   #碰撞检测
     pygame.sprite.spritecollideany()
 
 # surface 表面 
@@ -248,9 +248,9 @@
     pygame.transform.chop()
     pygame.transform.get_smoothscale_backend()
     pygame.transform.laplacian()
-    pygame.transform.rotate()
+    pygame.transform.rotate()       #旋转
     pygame.transform.rotozoom()
-    pygame.transform.scale()
+    pygame.transform.scale()        #放大缩小
     pygame.transform.scale2x()
     pygame.transform.set_smoothscale_backend()
     pygame.transform.smoothscale()
