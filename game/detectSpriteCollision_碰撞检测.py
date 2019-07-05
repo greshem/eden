@@ -13,9 +13,14 @@
 import pygame
 from pygame.locals import *
 import random
+pygame.init()
+pygame.mixer.init()
 
-screen=pygame.display.set_mode((640,480),0,32)
+screen=pygame.display.set_mode((1280,720),0,32)
 pygame.display.set_caption("Collision Detection")
+
+bullet_sound = pygame.mixer.Sound("sound\\bullet.wav")
+bullet_sound.set_volume(2)
 
 
 #creating the boxes
@@ -25,7 +30,7 @@ class Boxes(pygame.sprite.Sprite):
         self.image=pygame.Surface((50,50))
         self.image.fill((random.randint(0,255),random.randint(0,255),random.randint(0,255)))
         self.rect=self.image.get_rect()
-        self.rect.center=(random.randint(0,255),random.randint(0,255))
+        self.rect.center=(random.randint(0,1280),random.randint(0,720))
 
 #creating circle
 class Circle(pygame.sprite.Sprite):
@@ -46,7 +51,7 @@ def main():
     screen.blit(background,(0,0))
 
     boxes=[]
-    for i in range(0,10):
+    for i in range(0,1500):
         boxes.append(Boxes())
 
     circle=Circle()
@@ -61,6 +66,7 @@ def main():
         #checking the collision.check 'pydoc pygame.sprite.spritecollide' for mode details. True is used for sprite killing. It doesn't kill the sprite in actual.It is still present in the computer memory though.It has just removed it from the group so that no further display of that sprite is possible.
         if pygame.sprite.spritecollide(circle,allSprites,True):
             print ("collision");
+            bullet_sound.play()
 
         #following the CUD method
         allSprites.clear(screen,background)
