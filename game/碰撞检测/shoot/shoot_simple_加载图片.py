@@ -20,8 +20,10 @@ class Meteor(pygame.sprite.Sprite):
         pygame.sprite.Sprite.__init__(self)
         # start with a random speed
         self.speed = random.randrange(3, 12)
-        self.image = pygame.Surface([36, 54])
-        self.image.fill(RED)
+        self.image = pygame.image.load("img/enemy1.png").convert()
+        self.image.set_colorkey([0, 0, 0])
+        self.mask = pygame.mask.from_surface(self.image)
+        self.rect = self.image.get_rect()
         self.rect = self.image.get_rect()
         # start off the top of the screen
         self.rect.y = random.randrange(-50, -30)
@@ -94,9 +96,10 @@ class Bullet(pygame.sprite.Sprite):
 
     def __init__(self, x, y, level):
         pygame.sprite.Sprite.__init__(self)
-        self.image = pygame.Surface([100, 20])
-        self.image.fill(RED)
-        self.rect = self.image.get_rect()
+        self.image = pygame.image.load("img/shot3.png").convert()
+        self.image.set_colorkey([0, 0, 0])
+        self.mask = pygame.mask.from_surface(self.image)
+        self.rect = self.image.get_rect()  
         self.rect.midtop = x
         self.rect.y = y
 
@@ -141,7 +144,7 @@ def show_go_screen(score):
     draw_text("Press a key to begin", 24, WIDTH/2, HEIGHT*3/4)
     pygame.display.update()
     # pause for a moment and then wait for key
-    pygame.time.wait(500)
+    pygame.time.wait(5)
     wait_for_key()
     while True:
         if wait_for_key():
@@ -223,7 +226,7 @@ while True:
         if hit:
             # you die
             player.explode_snd.play()
-            pygame.time.wait(500)
+            pygame.time.wait(5)
             running = False
         # next, check bullets with meteors
         hits = pygame.sprite.groupcollide(meteor_sprite_list, bullet_sprite_list,

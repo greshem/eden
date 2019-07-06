@@ -39,8 +39,9 @@ class Bird(pygame.sprite.Sprite):
         # Sprite init function
         pygame.sprite.Sprite.__init__(self)
         self.speed_y = 0
-        self.image = pygame.Surface([self.width, self.height])
-        self.image.fill(RED)
+        self.image = pygame.image.load("./bluebird-downflap.png").convert()
+        self.image.set_colorkey([0, 0, 0])
+        self.mask = pygame.mask.from_surface(self.image)
         self.rect = self.image.get_rect()
         # start in the middle of the screen
         self.rect.centerx = WIDTH / 2
