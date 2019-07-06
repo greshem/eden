@@ -131,10 +131,15 @@ def main():
     SCORE = 0
     allSprites.add(Score())
 
-
+    #飞机的不同的图片
     #picture=yellow
     #picture=blue
-    #picture=pygame.image.load('plane.gif').convert()
+    picture=pygame.image.load('plane.gif').convert()
+    #picture=pygame.image.load('playerShip1_orange.png').convert()  
+    #picture=pygame.image.load('me0.png').convert()  
+    #picture=pygame.image.load('me1.png').convert()  
+    #picture=pygame.image.load('me2.png').convert()    	
+    #picture=pygame.image.load('red_rocket.gif').convert()
     #picture=pygame.image.load('geometrybullet.png').convert()
     #picture=pygame.image.load('stone.png').convert_alpha()
     plane=Plane(picture)
@@ -145,7 +150,16 @@ def main():
             if i.type==QUIT or pressed[K_q]:
                 exit()
         if pressed[K_SPACE] and plane.cooldown == 0:
-            Bullet(plane.rect.centerx,plane.rect.centery,red) 
+            #子弹的不同的图片
+            #bullet=blue
+            #bullet=yellow
+            #bullet=red
+            #bullet=pygame.image.load('red_rocket.gif').convert()
+            #bullet=pygame.image.load('shot1.png').convert()
+            #bullet=pygame.image.load('shot2.png').convert()
+            bullet=pygame.image.load('shot3.png').convert()
+
+            Bullet(plane.rect.centerx,plane.rect.centery,bullet) 
             plane.cooldown=15
 
         for stone in stones:
@@ -160,7 +174,21 @@ def main():
 
         stone_spawn_cooldown -= 1
         if len(stones) < max_stones and stone_spawn_cooldown <= 0:
-            Stone(blue)
+
+            #不同的石头的加载
+	    #stone_pic=blue
+	    #stone_pic=yellow
+	    #stone_pic=red
+	    #stone_pic=pygame.image.load('enemy1.png').convert()
+	    #stone_pic=pygame.image.load('enemy2.png').convert()
+            stone_pic=pygame.image.load('meteorBrown_big1.png').convert()
+	    #stone_pic=pygame.image.load('meteorBrown_big2.png').convert()
+	    #stone_pic=pygame.image.load('meteorBrown_big3.png').convert()
+	    #stone_pic=pygame.image.load('meteorBrown_big4.png').convert()
+            
+            #stone_pic=pygame.image.load('enemy3.png').convert()
+	    
+            Stone(stone_pic)
             stone_spawn_cooldown = stone_spawn_delay
        
         allSprites.clear(screen, background)
