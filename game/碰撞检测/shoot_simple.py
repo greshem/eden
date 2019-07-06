@@ -5,6 +5,8 @@
 import pygame
 import sys
 import random
+pygame.init()
+pygame.mixer.init()
 
 # define some colors
 BLACK = (0, 0, 0)
@@ -12,8 +14,11 @@ WHITE = (255, 255, 255)
 RED = (255, 0, 0)
 GREEN = (0, 255, 0)
 BLUE = (0, 0, 255)
+YELLOW=(255,255,0)
 BGCOLOR = BLACK
 
+bullet_sound = pygame.mixer.Sound("sound\\bullet.wav")
+bullet_sound.set_volume(3.5)
 
 class Meteor(pygame.sprite.Sprite):
     def __init__(self):
@@ -79,12 +84,11 @@ class Player(pygame.sprite.Sprite):
 
 
 class Bullet(pygame.sprite.Sprite):
-    speed = -15
-
+    speed = -20
     def __init__(self, x, y, level):
         pygame.sprite.Sprite.__init__(self)
-        self.image = pygame.Surface([100, 20])
-        self.image.fill(RED)
+        self.image = pygame.Surface([200, 10])
+        self.image.fill(YELLOW)
         self.rect = self.image.get_rect()
         self.rect.midtop = x
         self.rect.y = y
@@ -130,7 +134,7 @@ def show_go_screen(score):
     draw_text("Press a key to begin", 24, WIDTH/2, HEIGHT*3/4)
     pygame.display.update()
     # pause for a moment and then wait for key
-    pygame.time.wait(500)
+    pygame.time.wait(50)
     wait_for_key()
     while True:
         if wait_for_key():
@@ -217,10 +221,12 @@ while True:
         # next, check bullets with meteors
         hits = pygame.sprite.groupcollide(meteor_sprite_list, bullet_sprite_list,
                                           True, True)
+        if hits :
+            bullet_sound.play()
         # for each meteor destroyed, spawn a new one
         for hit in hits:
             #player.hit_snd.play()
-            player.score += 10
+            player.score += 10   
             newmeteor = Meteor()
             active_sprite_list.add(newmeteor)
             meteor_sprite_list.add(newmeteor)
@@ -236,3 +242,6 @@ while True:
 
     show_go_screen(player.score)
     running = True
+        
+	
+    
