@@ -48,10 +48,17 @@ class Player(pygame.sprite.Sprite):
         self.powerup_snd = pygame.mixer.Sound("snd/powerup.wav")
         self.powerup_snd.set_volume(1.0)
 
+        #原来的3行代码
+        #self.image = pygame.Surface([36, 54])
+        #self.image.fill(GREEN)
+        #self.rect = self.image.get_rect()
+
+	#图片的加载 最重要新的4行代码
         self.image = pygame.image.load("img/red_rocket.gif").convert()
         self.image.set_colorkey([0, 0, 0])
         self.mask = pygame.mask.from_surface(self.image)
         self.rect = self.image.get_rect()
+		
         self.rect.x = WIDTH / 2
         self.rect.bottom = HEIGHT - 10
 
@@ -79,7 +86,7 @@ class Player(pygame.sprite.Sprite):
         bullet = Bullet(self.rect.midtop, self.rect.y, self.level)
         active_sprite_list.add(bullet)
         bullet_sprite_list.add(bullet)
-        #self.shoot_sound.play()
+        self.shoot_sound.play()
 
 
 class Bullet(pygame.sprite.Sprite):
@@ -215,7 +222,7 @@ while True:
         hit = pygame.sprite.spritecollideany(player, meteor_sprite_list)
         if hit:
             # you die
-            #player.explode_snd.play()
+            player.explode_snd.play()
             pygame.time.wait(500)
             running = False
         # next, check bullets with meteors
@@ -223,7 +230,7 @@ while True:
                                           True, True)
         # for each meteor destroyed, spawn a new one
         for hit in hits:
-            #player.hit_snd.play()
+            player.hit_snd.play()
             player.score += 10
             newmeteor = Meteor()
             active_sprite_list.add(newmeteor)
