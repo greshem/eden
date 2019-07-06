@@ -21,13 +21,14 @@ FPS = 30
 # change this to change how quickly the bird falls
 GRAVITY = 1
 # how big the gaps between the pipes are
-GAP = 100
+GAP = 150
 # how frequently the pipes spawn (sec)
 FREQ = 3.5
 # how fast the bird flies at the pipes
-PIPE_SPEED = 3
+PIPE_SPEED = 6
 # how powerful is a flap?
-FLAP_SPEED = 15
+FLAP_SPEED = 9
+
 
 class Bird(pygame.sprite.Sprite):
     # player controlled bird, can only flap
