@@ -64,6 +64,8 @@ class Plane(pygame.sprite.Sprite):
         self.cooldown = max(0, self.cooldown-1)
 
 
+
+
 class Stone(pygame.sprite.Sprite):
     def __init__(self, image=None):
         pygame.sprite.Sprite.__init__(self, self.containers)

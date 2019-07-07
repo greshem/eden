@@ -134,12 +134,12 @@ def main():
     #飞机的不同的图片
     #picture=yellow
     #picture=blue
-    picture=pygame.image.load('plane.gif').convert()
+    #picture=pygame.image.load('plane.gif').convert()
     #picture=pygame.image.load('playerShip1_orange.png').convert()  
     #picture=pygame.image.load('me0.png').convert()  
     #picture=pygame.image.load('me1.png').convert()  
     #picture=pygame.image.load('me2.png').convert()    	
-    #picture=pygame.image.load('red_rocket.gif').convert()
+    picture=pygame.image.load('red_rocket.gif').convert()
     #picture=pygame.image.load('geometrybullet.png').convert()
     #picture=pygame.image.load('stone.png').convert_alpha()
     plane=Plane(picture)

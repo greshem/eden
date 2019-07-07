@@ -24,7 +24,7 @@ class Meteor(pygame.sprite.Sprite):
     def __init__(self):
         pygame.sprite.Sprite.__init__(self)
         # start with a random speed
-        self.speed = random.randrange(3, 12)
+        self.speed = random.randrange(3, 10)
         self.image = pygame.Surface([36, 54])
         self.image.fill(RED)
         self.rect = self.image.get_rect()
@@ -36,7 +36,7 @@ class Meteor(pygame.sprite.Sprite):
         # move the sprite
         self.rect.y += self.speed
         if self.rect.y > HEIGHT + 10:
-            self.rect.y = random.randrange(-50, 30)
+            self.rect.y = random.randrange(-40, 20)
             self.rect.x = random.randrange(WIDTH)
 
 
