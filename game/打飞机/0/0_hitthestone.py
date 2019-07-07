@@ -138,8 +138,8 @@ def main():
     #picture=pygame.image.load('playerShip1_orange.png').convert()  
     #picture=pygame.image.load('me0.png').convert()  
     #picture=pygame.image.load('me1.png').convert()  
-    #picture=pygame.image.load('me2.png').convert()    	
-    picture=pygame.image.load('red_rocket.gif').convert()
+    picture=pygame.image.load('C:\\Users\\Administrator\\Desktop\\eden\\game\\打飞机\\飞机2.jpg').convert()    	
+    #picture=pygame.image.load('red_rocket.gif').convert()
     #picture=pygame.image.load('geometrybullet.png').convert()
     #picture=pygame.image.load('stone.png').convert_alpha()
     plane=Plane(picture)
@@ -156,8 +156,8 @@ def main():
             #bullet=red
             #bullet=pygame.image.load('red_rocket.gif').convert()
             #bullet=pygame.image.load('shot1.png').convert()
-            #bullet=pygame.image.load('shot2.png').convert()
-            bullet=pygame.image.load('shot3.png').convert()
+            bullet=pygame.image.load('shot2.png').convert()
+            #bullet=pygame.image.load('shot3.png').convert()
 
             Bullet(plane.rect.centerx,plane.rect.centery,bullet) 
             plane.cooldown=15

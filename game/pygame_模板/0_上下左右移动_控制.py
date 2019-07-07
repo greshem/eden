@@ -25,6 +25,11 @@ screen = pygame.display.set_mode((WIDTH, HEIGHT))  #设置窗口大小
 pygame.display.set_caption("My Game")	#设置游戏的名称
 clock = pygame.time.Clock()		#获取游戏的时钟
 
+
+pygame.mixer.music.load( "K:\_xfile_backup\朗读\光盘_cd_钱奕程\2014_04_15_冰雪奇缘_列那狐\我要就出贝里奥_巴赫：G弦上的咏叹调.ogg")
+pygame.mixer.music.set_volume(0.1)
+pygame.mixer.music.play(loops=-1)
+
 class Plane(pygame.sprite.Sprite):
     def __init__(self, image=None):
         pygame.sprite.Sprite.__init__(self, self.containers)
@@ -32,13 +37,13 @@ class Plane(pygame.sprite.Sprite):
         red.fill((255, 0, 0))
 	
         self.image = red
-        self.cooldown=15
+        self.cooldown=1
         self.rect=self.image.get_rect()
         self.rect.centerx = screen.get_width() / 2
-        self.distancefromcenter=30
+        self.distancefromcenter=25
         self.rect.centery=screen.get_height()-self.distancefromcenter-40
-        self.dx=10
-        self.dy=10
+        self.dx=19
+        self.dy=19
 
     def update(self):
         self.pressed=pygame.key.get_pressed()
