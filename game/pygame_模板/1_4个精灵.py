@@ -1,0 +1,186 @@
+# Pygame 模板基于这个模块 进一步的添加功能
+import pygame
+import random
+import pygame
+from pygame.locals import *
+import random
+import time
+
+
+WIDTH = 360
+HEIGHT = 480
+FPS = 30
+
+# 常见的颜色定义一下
+WHITE = (255, 255, 255)
+BLACK = (0, 0, 0)
+RED = (255, 0, 0)
+GREEN = (0, 255, 0)
+BLUE = (0, 0, 255)
+
+# 初始化pygame环境
+pygame.init()
+pygame.mixer.init()  #初始化音效系统
+screen = pygame.display.set_mode((WIDTH, HEIGHT))  #设置窗口大小
+pygame.display.set_caption("My Game")	#设置游戏的名称
+clock = pygame.time.Clock()		#获取游戏的时钟
+
+class Plane(pygame.sprite.Sprite):
+    def __init__(self, image=None):
+        pygame.sprite.Sprite.__init__(self, self.containers)
+        red=pygame.Surface([10, 10])
+        red.fill((255, 0, 0))
+	
+        self.image = red
+        self.cooldown=15
+        self.rect=self.image.get_rect()
+        self.rect.centerx = screen.get_width() / 2
+        self.distancefromcenter=30
+        self.rect.centery=screen.get_height()-self.distancefromcenter-40
+        self.dx=3
+        self.dy=3
+
+    def update(self):
+        self.pressed=pygame.key.get_pressed()
+        if self.pressed[K_DOWN]:
+            self.rect.centery+=self.dy
+        elif self.pressed[K_UP]:
+            self.rect.centery-=self.dy
+        if self.pressed[K_LEFT]:
+            self.rect.centerx-=self.dx
+        elif self.pressed[K_RIGHT]:
+            self.rect.centerx+=self.dx
+
+        if self.rect.bottom>=screen.get_height():
+            self.rect.bottom=screen.get_height()
+        elif self.rect.top<=0:
+            self.rect.top=0
+
+        if self.rect.centerx>=screen.get_width()-self.distancefromcenter:
+            self.rect.centerx=screen.get_width()-self.distancefromcenter
+        elif self.rect.centerx<=self.distancefromcenter:
+            self.rect.centerx=self.distancefromcenter
+
+        self.cooldown = max(0, self.cooldown-1)
+
+
+class Stone(pygame.sprite.Sprite):
+    def __init__(self, image=None):
+        pygame.sprite.Sprite.__init__(self, self.containers)
+
+        red=pygame.Surface([10, 10])
+        red.fill((255, 0, 0))
+        self.image=red
+        self.rect=self.image.get_rect()
+        self.rect.centerx=random.randint(5,630)
+        self.rect.centery=0
+        self.dy=4
+
+    def update(self):
+        self.rect.centery+=self.dy
+        if self.rect.bottom>=screen.get_height():
+            self.rect.centerx=random.randint(5,630)
+            self.rect.centery=0
+
+
+class Bullet(pygame.sprite.Sprite):
+
+    def __init__(self, posx, posy, image=None):
+        pygame.sprite.Sprite.__init__(self, self.containers)
+
+        red=pygame.Surface([10, 10])
+        red.fill((255, 0, 0))
+        self.image=red
+        self.rect=self.image.get_rect()        
+        self.rect.center=(posx,posy-30)
+        self.dy=5
+        
+
+    def update(self):
+        self.rect.centery-=self.dy
+        self.rect.center=(self.rect.centerx,self.rect.centery)
+        if self.rect.top<=0:
+            self.kill()
+
+class Score(pygame.sprite.Sprite):
+
+    def __init__(self):
+        pygame.sprite.Sprite.__init__(self)
+        self.font = pygame.font.Font(None, 20)
+        self.font.set_italic(1)
+        self.color = Color('white')
+        self.lastscore = -1
+        self.update()
+        self.rect = self.image.get_rect().move(10, 450)
+
+    def update(self):
+        if SCORE != self.lastscore:
+            self.lastscore = SCORE
+            msg = 'SCORE: {}'.format(SCORE)
+            self.image = self.font.render(msg, 0, self.color)
+       
+	   
+	   
+	   
+allSprites = pygame.sprite.Group()     #所有运动的精灵
+bullets = pygame.sprite.Group()
+stones = pygame.sprite.Group()
+
+Plane.containers = allSprites
+Stone.containers = allSprites, stones
+Bullet.containers = allSprites, bullets
+	
+plane=Plane()
+global SCORE
+SCORE = 0
+allSprites.add(Score())
+
+
+max_stones = 10;
+stone_spawn_delay = 40;
+stone_spawn_cooldown = 0;
+	
+
+# 游戏循环
+running = True			#游戏是否是运行状态
+while running:
+	# 使游戏跑在正确的状态 
+    clock.tick(FPS)
+    # 处理输入事件
+    for event in pygame.event.get():
+        # 假如事件是 退出, 那么游戏运行状态为关闭
+        if event.type == pygame.QUIT:
+            running = False
+    pressed=pygame.key.get_pressed()
+    if pressed[K_SPACE] and plane.cooldown == 0:
+        Bullet(plane.rect.centerx,plane.rect.centery) 
+        plane.cooldown=15
+
+    for stone in stones:
+        for bullet in bullets:
+            if bullet.rect.colliderect(stone):
+                bullet.kill()
+                stone.kill()
+                SCORE += 500
+        if stone.rect.colliderect(plane):
+            plane.kill()
+            stone.kill()
+
+    stone_spawn_cooldown -= 1
+    if len(stones) < max_stones and stone_spawn_cooldown <= 0:	    
+        Stone()
+        stone_spawn_cooldown = stone_spawn_delay
+			
+    # 更新所有的运动精灵的状态
+    allSprites.update()
+    bullets.update()
+    stones.update()
+
+    # 用黑色填充窗口
+    screen.fill(BLACK)
+	#每个精灵在窗口上画出来
+    allSprites.draw(screen)
+    # 开始 flip 整个画面
+    pygame.display.flip()
+
+pygame.quit()
