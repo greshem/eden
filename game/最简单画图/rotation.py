@@ -18,7 +18,7 @@ pygame.init()
 screen=pygame.display.set_mode((640,480),0,0)
 pygame.display.set_caption("Rotation using transform module")
 
-image=pygame.image.load("naughty.gif").convert_alpha()
+image=pygame.image.load("naughty.png").convert_alpha()
 image2=image
 a=0
 clock=pygame.time.Clock()
