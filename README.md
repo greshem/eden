@@ -1,32 +1,69 @@
-<p align="center">
-  <img src="https://raw.githubusercontent.com/filebrowser/logo/master/banner.png" width="550"/>
-</p>
+pygame编程开发
+=============
 
-![Preview](https://user-images.githubusercontent.com/5447088/50716739-ebd26700-107a-11e9-9817-14230c53efd2.gif)
+pygame编程,尽可能多的例子,
 
-[![Travis](https://img.shields.io/travis/com/filebrowser/filebrowser.svg?style=flat-square)](https://travis-ci.com/filebrowser/filebrowser)
-[![Go Report Card](https://goreportcard.com/badge/github.com/filebrowser/filebrowser?style=flat-square)](https://goreportcard.com/report/github.com/filebrowser/filebrowser)
-[![Documentation](https://img.shields.io/badge/godoc-reference-blue.svg?style=flat-square)](http://godoc.org/github.com/filebrowser/filebrowser)
-[![Version](https://img.shields.io/github/release/filebrowser/filebrowser.svg?style=flat-square)](https://github.com/filebrowser/filebrowser/releases/latest)
-[![Chat IRC](https://img.shields.io/badge/freenode-%23filebrowser-blue.svg?style=flat-square)](http://webchat.freenode.net/?channels=%23filebrowser)
+主页: [https://github.com/greshem/eden](https://github.com/greshem/eden)
 
-> ℹ INFO: **This project is not under active development ATM. A small group of developers keeps the project alive, but due to lack of time, we can't continue adding new features or doing deep changes. Please read [#532](https://github.com/filebrowser/filebrowser/issues/532) for more info!**
 
-filebrowser provides a file managing interface within a specified directory and it can be used to upload, delete, preview, rename and edit your files. It allows the creation of multiple users and each user can have its own directory. It can be used as a standalone app or as a middleware.
+ppygame编程开发
+----------------------------------------
 
-## Features
+pygame编程开发 ppygame编程开发
+通过pygame通过项目的方式,让小朋友们尽快的掌握python和游戏开发
 
-Please refer to our docs at [filebrowser.xyz/features](https://filebrowser.xyz/features)
 
-## Install
+![截图](http://pythonturtle.org/images/screenshot.gif)
 
-Please refer to our docs at [filebrowser.xyz](https://filebrowser.xyz/).
+安装
+------------
 
-## Usage
+安装程序
+[https://github.com/greshem/eden](https://github.com/greshem/eden) 或者 [GitHub](https://github.com/greshem/eden/releases).
 
-Please refer to our docs at [filebrowser.xyz/usage](https://filebrowser.xyz/usage).
+深度Linux:
 
-## Contributing
+```bash
+sudo apt-get install -y python3-wxgtk4.0
+```
 
-Please refer to our docs at [filebrowser.xyz/contributing](https://filebrowser.xyz/contributing).
-# eden
+centos7:
+
+```bash
+python3 -m pip install wxpython
+```
+
+windows7下
+
+```bash
+python3 -m pip install --user pygame编程开发
+pygame编程开发
+```
+
+
+兼容性
+-------------
+
+Python 3.6 and wxPython  4.0.1. 系统通过测试
+Windows, macOS, Ubuntu Linux, and Fedora.有问题请联系
+
+开发
+-----------
+
+```bash
+git clone https://github.com/greshem/eden
+```
+
+编译:
+-----------
+
+```bash
+python3 setup.py clean bundle
+```
+
+欢迎提bug [open a pull request](https://github.com/greshem/eden/pulls) 
+
+其他
+-----
+
+pygame编程开发 2019创建.  ppygame编程开发
