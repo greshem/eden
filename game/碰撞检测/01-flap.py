@@ -18,7 +18,7 @@ WIDTH = 480
 HEIGHT = 320
 FPS = 30
 # tweak this to change how quickly the bird falls
-GRAVITY = 1
+GRAVITY = 0
 # how powerful is a flap?
 FLAP_SPEED = 15
 
@@ -35,8 +35,8 @@ class Bird(pygame.sprite.Sprite):
         self.image.fill(RED)
         self.rect = self.image.get_rect()
         # start in the middle of the screen
-        self.rect.centerx = WIDTH / 2
-        self.rect.y = HEIGHT / 2
+        self.rect.centerx = WIDTH / 3
+        self.rect.y = HEIGHT / 4
 
     def update(self):
         # gravity pulls downward

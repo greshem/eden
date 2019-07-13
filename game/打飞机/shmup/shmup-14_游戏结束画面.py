@@ -68,15 +68,16 @@ class Player(pygame.sprite.Sprite):
         self.image = pygame.transform.scale(player_img, (50, 38))
         self.image.set_colorkey(BLACK)
         self.rect = self.image.get_rect()
-        self.radius = 20
+        self.radius = 30
         # pygame.draw.circle(self.image, RED, self.rect.center, self.radius)
         self.rect.centerx = WIDTH / 2
         self.rect.bottom = HEIGHT - 10
         self.speedx = 0
-        self.shield = 100
-        self.shoot_delay = 250
+        self.speedy = 0
+        self.shield = 1
+        self.shoot_delay = 1
         self.last_shot = pygame.time.get_ticks()
-        self.lives = 3
+        self.lives = 30
         self.hidden = False
         self.hide_timer = pygame.time.get_ticks()
         self.power = 1
@@ -95,14 +96,22 @@ class Player(pygame.sprite.Sprite):
             self.rect.bottom = HEIGHT - 10
 
         self.speedx = 0
+        self.speedy = 0
+        
         keystate = pygame.key.get_pressed()
         if keystate[pygame.K_LEFT]:
             self.speedx = -8
         if keystate[pygame.K_RIGHT]:
             self.speedx = 8
+        if keystate[pygame.K_DOWN]:
+            self.speedy = 8
+        if keystate[pygame.K_UP]:
+            self.speedy = -8
         if keystate[pygame.K_SPACE]:
             self.shoot()
         self.rect.x += self.speedx
+        self.rect.y += self.speedy
+        
         if self.rect.right > WIDTH:
             self.rect.right = WIDTH
         if self.rect.left < 0:
@@ -255,7 +264,8 @@ bullet_img = pygame.image.load(path.join(img_dir, "laserRed16.png")).convert()
 meteor_images = []
 meteor_list = ['meteorBrown_big1.png', 'meteorBrown_med1.png', 'meteorBrown_med1.png',
                'meteorBrown_med3.png', 'meteorBrown_small1.png', 'meteorBrown_small2.png',
-               'meteorBrown_tiny1.png','enemy3.png']
+               'meteorBrown_tiny1.png','enemy3.png','enemy3.png','enemy3.png','enemy3.png','enemy3.png', "me0.png","me1.png", "me2.png", "enemy2.png",  "enemy1.png", "plane.gif"
+               ]
 for img in meteor_list:
     meteor_images.append(pygame.image.load(path.join(img_dir, img)).convert())
 explosion_anim = {}
@@ -307,6 +317,7 @@ while running:
         for i in range(8):
             newmob()
         score = 0
+        count = 0
 
     # keep loop running at the right speed
     clock.tick(FPS)
@@ -322,7 +333,9 @@ while running:
     # check to see if a bullet hit a mob
     hits = pygame.sprite.groupcollide(mobs, bullets, True, True)
     for hit in hits:
-        score += 50 - hit.radius
+        score += 10000000 - hit.radius
+#        score += 
+        count +=1
         random.choice(expl_sounds).play()
         expl = Explosion(hit.rect.center, 'lg')
         all_sprites.add(expl)
@@ -367,7 +380,8 @@ while running:
     screen.fill(BLACK)
     screen.blit(background, background_rect)
     all_sprites.draw(screen)
-    draw_text(screen, str(score), 18, WIDTH / 2, 10)
+    draw_text(screen, "score:%s"%str(score), 18, WIDTH / 2, 10)
+    draw_text(screen, "count:%s"%str(count), 18, WIDTH / 2, 25)
     draw_shield_bar(screen, 5, 5, player.shield)
     draw_lives(screen, WIDTH - 100, 5, player.lives, player_mini_img)
     # *after* drawing everything, flip the display

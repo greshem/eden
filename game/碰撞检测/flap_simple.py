@@ -5,6 +5,16 @@
 import pygame
 import sys
 import random
+import pygame
+import random
+import pygame
+from pygame.locals import *
+import random
+import time
+
+# 初始化pygame环境
+pygame.init()
+pygame.mixer.init()  #初始化音效系统
 
 # define some colors
 BLACK = (0, 0, 0)
@@ -17,17 +27,21 @@ BGCOLOR = LIGHTBLUE
 # basic constants for your game options
 WIDTH = 480
 HEIGHT = 320
-FPS = 30
+FPS = 20
 # change this to change how quickly the bird falls
-GRAVITY = 1
+GRAVITY = 0
 # how big the gaps between the pipes are
-GAP = 150
+GAP = 50
 # how frequently the pipes spawn (sec)
 FREQ = 3.5
 # how fast the bird flies at the pipes
-PIPE_SPEED = 6
+PIPE_SPEED = 10
 # how powerful is a flap?
-FLAP_SPEED = 9
+FLAP_SPEED = 0
+
+pygame.mixer.music.load('C:\\Users\\Administrator\\Desktop\\eden\\game\\碰撞检测\\angry-birds.mp3')
+pygame.mixer.music.set_volume(10)
+pygame.mixer.music.play(loops=-1)
 
 
 class Bird(pygame.sprite.Sprite):
@@ -47,7 +61,7 @@ class Bird(pygame.sprite.Sprite):
         self.rect.centerx = WIDTH / 2
         self.rect.y = HEIGHT / 2
 
-    def update(self):
+    def updateold(self):
         # gravity pulls downward
         self.speed_y += GRAVITY
         # move
@@ -59,6 +73,21 @@ class Bird(pygame.sprite.Sprite):
         if self.rect.bottom > HEIGHT:
             self.rect.bottom = HEIGHT
             self.speed_y = 0
+    def update(self):
+        self.pressed=pygame.key.get_pressed()
+        if self.pressed[K_DOWN]:
+            self.rect.centery+=10
+        elif self.pressed[K_UP]:
+            self.rect.centery-=10
+        if self.pressed[K_LEFT]:
+            self.rect.centerx-=10
+        elif self.pressed[K_RIGHT]:
+            self.rect.centerx+=10
+        if self.rect.bottom>=screen.get_height():
+            self.rect.bottom=screen.get_height()
+        elif self.rect.top<=0:
+            self.rect.top=0
+
 
     def flap(self):
         # player hit SPACEBAR

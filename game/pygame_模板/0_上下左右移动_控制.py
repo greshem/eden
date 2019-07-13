@@ -22,20 +22,20 @@ BLUE = (0, 0, 255)
 pygame.init()
 pygame.mixer.init()  #初始化音效系统
 screen = pygame.display.set_mode((WIDTH, HEIGHT))  #设置窗口大小
-pygame.display.set_caption("My Game")	#设置游戏的名称
-clock = pygame.time.Clock()		#获取游戏的时钟
+pygame.display.set_caption("My Game")   #设置游戏的名称
+clock = pygame.time.Clock()     #获取游戏的时钟
 
 
-pygame.mixer.music.load( "K:\_xfile_backup\朗读\光盘_cd_钱奕程\2014_04_15_冰雪奇缘_列那狐\我要就出贝里奥_巴赫：G弦上的咏叹调.ogg")
-pygame.mixer.music.set_volume(0.1)
-pygame.mixer.music.play(loops=-1)
+#pygame.mixer.music.load( "K:\_xfile_backup\朗读\光盘_cd_钱奕程\2014_04_15_冰雪奇缘_列那狐\我要就出贝里奥_巴赫：G弦上的咏叹调.ogg")
+#pygame.mixer.music.set_volume(0.1)
+#pygame.mixer.music.play(loops=-1)
 
 class Plane(pygame.sprite.Sprite):
     def __init__(self, image=None):
         pygame.sprite.Sprite.__init__(self, self.containers)
         red=pygame.Surface([50, 50])
         red.fill((255, 0, 0))
-	
+    
         self.image = red
         self.cooldown=1
         self.rect=self.image.get_rect()
@@ -68,7 +68,7 @@ class Plane(pygame.sprite.Sprite):
 
         self.cooldown = max(0, self.cooldown-1)
 
-	   
+       
 allSprites = pygame.sprite.Group()     #所有运动的精灵
 Plane.containers = allSprites
 
@@ -76,9 +76,9 @@ plane=Plane()
 
 
 # 游戏循环
-running = True			#游戏是否是运行状态
+running = True          #游戏是否是运行状态
 while running:
-	# 使游戏跑在正确的状态 
+    # 使游戏跑在正确的状态 
     clock.tick(FPS)
     # 处理输入事件
     for event in pygame.event.get():
@@ -91,7 +91,7 @@ while running:
 
     # 用黑色填充窗口
     screen.fill(BLACK)
-	#每个精灵在窗口上画出来
+    #每个精灵在窗口上画出来
     allSprites.draw(screen)
     # 开始 flip 整个画面
     pygame.display.flip()
