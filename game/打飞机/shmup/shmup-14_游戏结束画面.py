@@ -44,6 +44,16 @@ def newmob():
     all_sprites.add(m)
     mobs.add(m)
 
+import time
+#获取当前时间
+def getnow2():
+#    t = (2009,  2, 17, 17, 3, 38, 1, 48, 0)
+#    t = time.time()
+    now=time.strftime("%Y-%m-%d_%H:%M:%S ",time.localtime())
+#    print (now)       
+    return now
+
+
 def draw_shield_bar(surf, x, y, pct):
     if pct < 0:
         pct = 0
@@ -61,7 +71,7 @@ def draw_lives(surf, x, y, lives, img):
         img_rect.x = x + 30 * i
         img_rect.y = y
         surf.blit(img, img_rect)
-
+#玩家
 class Player(pygame.sprite.Sprite):
     def __init__(self):
         pygame.sprite.Sprite.__init__(self)
@@ -197,7 +207,16 @@ class Bullet(pygame.sprite.Sprite):
         # kill if it moves off the top of the screen
         if self.rect.bottom < 0:
             self.kill()
+import time
+#获取当前时间
+def getnow():
+    t = (2009,  2, 17, 17, 3, 38, 1, 48, 0)
+    t = time.time()
+    now=time.strftime("%b %d %Y %H:%M:%S", time.gmtime(t))
+#    print (now)
+    return now
 
+print("NOW:%s"%getnow())
 class Pow(pygame.sprite.Sprite):
     def __init__(self, center):
         pygame.sprite.Sprite.__init__(self)
@@ -213,7 +232,7 @@ class Pow(pygame.sprite.Sprite):
         # kill if it moves off the top of the screen
         if self.rect.top > HEIGHT:
             self.kill()
-
+#炸弹
 class Explosion(pygame.sprite.Sprite):
     def __init__(self, center, size):
         pygame.sprite.Sprite.__init__(self)
@@ -327,12 +346,13 @@ while running:
         if event.type == pygame.QUIT:
             running = False
 
-    # Update
+#    # Update所有精灵
     all_sprites.update()
 
     # check to see if a bullet hit a mob
     hits = pygame.sprite.groupcollide(mobs, bullets, True, True)
     for hit in hits:
+#  分数     
         score += 10000000 - hit.radius
 #        score += 
         count +=1
@@ -382,9 +402,10 @@ while running:
     all_sprites.draw(screen)
     draw_text(screen, "score:%s"%str(score), 18, WIDTH / 2, 10)
     draw_text(screen, "count:%s"%str(count), 18, WIDTH / 2, 25)
+    draw_text(screen, "NOW:%s"%str(getnow2()), 18, WIDTH / 2, 40)
     draw_shield_bar(screen, 5, 5, player.shield)
     draw_lives(screen, WIDTH - 100, 5, player.lives, player_mini_img)
     # *after* drawing everything, flip the display
     pygame.display.flip()
-
+#退出
 pygame.quit()
