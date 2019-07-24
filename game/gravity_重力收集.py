@@ -39,7 +39,7 @@ FULLSCREEN = True
 
 background_color = (0, 0, 0)
 planet_color = (255, 255, 255)
-planet_radius = 20
+planet_radius = 100
 
 planet_pos = (SCREEN_WIDTH/2.0, SCREEN_HEIGHT/2.0)
 
@@ -76,7 +76,7 @@ class Chunk:
     
     if self.bad:
       self.color = [255, 0, 0]
-      self.size = 20
+      self.size = 10
     
     self.attach = False
     self.dead = False
@@ -127,7 +127,7 @@ class Chunk:
     if (planet.pos[0] < self.pos[0]):
       xcomp *= -1
     
-    speedlimit = 400.0
+    speedlimit = 50.0
     speed = sqrt(self.velocity[0]**2 + self.velocity[1]**2)
     # Limit the speed when the chunk isn't near
     if speed > speedlimit and dist > SCREEN_WIDTH / 5:

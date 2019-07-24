@@ -24,9 +24,9 @@ vec = pg.math.Vector2
 class Bullet(pg.sprite.Sprite):
     def __init__(self, player):
         pg.sprite.Sprite.__init__(self)
-        self.image = pg.Surface((5, 5))
+        self.image = pg.Surface((100,100))
         self.image.fill(YELLOW)
-        self.rect = self.image.get_rect()
+
         a = (pg.mouse.get_pos() - player.pos).angle_to(vec(1, 0))
         self.pos = player.pos + vec(50, 0).rotate(-a)
         self.vel = vec(400, 0).rotate(-a)
