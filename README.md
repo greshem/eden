@@ -13,7 +13,7 @@ pygame编程开发 ppygame编程开发
 通过pygame通过项目的方式,让小朋友们尽快的掌握python和游戏开发
 
 
-![截图](http://pythonturtle.org/images/screenshot.gif)
+![截图](http://pythonturtle.org/images/screenshot2.gif)
 
 安装
 ------------
@@ -24,27 +24,32 @@ pygame编程开发 ppygame编程开发
 深度Linux:
 
 ```bash
-sudo apt-get install -y python3-wxgtk4.0
+sudo apt-get install -y pygame
 ```
 
-centos7:
+centos7 python3.6:
 
 ```bash
-python3 -m pip install wxpython
+yum install python36*
+cd /tmp/
+wget  http://mirrors.163.com/gentoo/distfiles//pip-9.0.1.tar.gz
+tar -xzf pip-9.0.1.tar.gz 
+cd /tmp/pip-9.0.1/
+python36 setup.py install 
 ```
 
 windows7下
 
 ```bash
-python3 -m pip install --user pygame编程开发
-pygame编程开发
+#下载地址
+https://www.python.org/ftp/python/3.7.4/python-3.7.4.exe
 ```
 
 
 兼容性
 -------------
-
-Python 3.6 and wxPython  4.0.1. 系统通过测试
+centos7下
+Python 3.6 and python2.7 系统通过测试
 Windows, macOS, Ubuntu Linux, and Fedora.有问题请联系
 
 开发
