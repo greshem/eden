@@ -2,6 +2,20 @@
     scikit-image是一个开源Python包，适用于numpy数组。它实现了用于研究、教育和行业应用的算法和实用程序。
     即使对于那些刚接触Python生态系统的人，它也是一个相当简单直接的库。
 
+## python
+``` python
+from PIL import Image
+
+img1 = Image.open("1.jpg")  #使用Image模块中的open方法，从指定的图像文件中获取一个Image对象，出错触发错误
+img2 = Image.Image()    #构造函数定义一个空的图像对象
+
+print(img1,type(img1))  #根据文件判别Image对象
+print(img2,type(img2))  #初始Image对象
+
+img1.show() #显示图像
+img1.save("hhh.png")    #注意这里可以用来保存图片，而且支持不同类型文件的转换
+```
+
 # 2. Numpy
     Numpy是Python编程的核心库之一，并为数组提供支持。图像本质上是包含数据点像素的标准Numpy数组。
     因此，通过使用基本的NumPy操作，例如切片、屏蔽和花式索引，我们可以修改图像的像素值。
