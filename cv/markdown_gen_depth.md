@@ -25,7 +25,8 @@
 
 # 6. SimpleCV
     SimpleCV也是一个用于构建计算机视觉应用程序的开源框架。有了它，您可以访问几个高性能的计算机视觉库，
-    如OpenCV，无需首先了解位深度、文件格式、色彩空间等。学习曲线远远小于OpenCV，并且正如他们的标语所说，“计算机视觉变得容易”。
+    如OpenCV，无需首先了解位深度、文件格式、色彩空间等。
+    学习曲线远远小于OpenCV，并且正如他们的标语所说，“计算机视觉变得容易”。
 
 # 7. Mahotas
     Mahotas是另一个用于Python的计算机视觉和图像处理库。
@@ -39,8 +40,8 @@
 # 9. pgmagick
     pgmagick是GraphicsMagick库的基于Python的包装器。 
     GraphicsMagick图像处理系统有时被称为图像处理的瑞士军 刀。
-    它提供了强大而高效的工具和库集合，支持以超过88种主要格式读取、写入和操作图像，包括DPX，GIF，JPEG，JPEG-2000，PNG，PDF，PNM和
-    TIFF等重要格式。
+    它提供了强大而高效的工具和库集合，支持以超过88种主要格式读取、写入和操作图像，
+      包括DPX，GIF，JPEG，JPEG-2000，PNG，PDF，PNM和TIFF等重要格式。
 
 # 10.Pycairo
     Pycairo是一组用于图形库cairo的python绑定。 
