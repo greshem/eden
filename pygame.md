@@ -1,18 +1,49 @@
 # pygame 函数
 
-# camera (照相机)
+## contents
++ [照相机](#camera)
++ [光驱](#cdrom)
++ [光标](#cursors)
++ [显示器](#display)
++ [绘制](#draw)
++ [编码](#encode)
++ [事件](#event )
++ [例子](#examples)
++ [字体](#font)
++ [字体](#freetype)
++ [gfx绘图](#gfxdraw)
++ [图片](#image)
++ [按键](#key)
++ [掩码](#mask)
++ [midi](#midi)
++ [混音器](#mixer )
++ [鼠标](#mouse)
++ [像素](#pixel)
++ [声音](#sndarray)
++ [精灵](#sprite )
++ [表面](#surface)
++ [变形](#transform)
+
+### camera (照相机)
     pygame.camera.colorspace()
     pygame.camera.list_cameras()
-# cdrom 
+
+[:arrow_up: 返回](#contents)
+
+
+### cdrom 
     pygame.cdrom.get_count()
     pygame.cdrom.get_init()
 
-# cursors 
+[:arrow_up: 返回](#contents)
+
+### cursors 
     pygame.cursors.compile()
     pygame.cursors.load_xbm()
 
-# display
-    pygame.display.Info()  #显示器鑫鑫
+[:arrow_up: 返回](#contents)
+### display
+    pygame.display.Info()  #显示器信息
     pygame.display.flip()
     pygame.display.get_active()
     pygame.display.get_caption()
@@ -33,7 +64,8 @@
     pygame.display.toggle_fullscreen()
     pygame.display.update()
 
-# draw
+[:arrow_up: 返回](#contents)
+### draw
     pygame.draw.aaline()
     pygame.draw.aalines()
     pygame.draw.arc()       #角
@@ -44,11 +76,13 @@
     pygame.draw.polygon()   #多边形
     pygame.draw.rect()      #矩形
 
-# encode
+[:arrow_up: 返回](#contents)
+### encode
     pygame.encode_file_path()
     pygame.encode_string()
 
-# event 
+[:arrow_up: 返回](#contents)
+### event 
     pygame.event.Event()
     pygame.event.clear()
     pygame.event.event_name()
@@ -64,7 +98,8 @@
     pygame.event.set_grab()
     pygame.event.wait()
 
-# examples
+[:arrow_up: 返回](#contents)
+### examples
     pygame.examples.aliens.main()
     pygame.examples.arraydemo.main()
     pygame.examples.blend_fill.main()
@@ -95,13 +130,15 @@
     pygame.examples.testsprite.main()
     pygame.examples.vgrade.main()
 
-# font 字体
+[:arrow_up: 返回](#contents)
+### font 字体
     pygame.font.SysFont()
     pygame.font.get_default_font() #获取默认字体
     pygame.font.get_fonts() #获取字体
     pygame.font.match_font()
 
-# freetype
+[:arrow_up: 返回](#contents)
+### freetype
     pygame.freetype.get_cache_size()
     pygame.freetype.get_default_resolution()
     pygame.freetype.get_version()
@@ -112,7 +149,9 @@
     pygame.get_sdl_byteorder()
     pygame.get_sdl_version()
 
-# gfxdraw
+
+[:arrow_up: 返回](#contents)
+### gfxdraw
     pygame.gfxdraw.aacircle()
     pygame.gfxdraw.aaellipse()
     pygame.gfxdraw.aapolygon()
@@ -131,7 +170,9 @@
     pygame.gfxdraw.trigon()
     pygame.gfxdraw.vline()
 
-# image 图片
+
+[:arrow_up: 返回](#contents)
+### image 图片
     pygame.image.frombuffer()
     pygame.image.fromstring()
     pygame.image.get_extended()
@@ -141,7 +182,9 @@
 
     pygame.init()
 
-# key
+
+[:arrow_up: 返回](#contents)
+### key
     pygame.key.get_focused()
     pygame.key.get_mods()
     pygame.key.get_pressed()
@@ -150,13 +193,17 @@
     pygame.key.set_mods()
     pygame.key.set_repeat()
 
-# mask
+[:arrow_up: 返回](#contents)
+
+### mask
     pygame.mask.from_surface()
     pygame.mask.from_threshold()
     pygame.math.disable_swizzling()
     pygame.math.enable_swizzling()
 
-# midi
+[:arrow_up: 返回](#contents)
+
+### midi
     pygame.midi.MidiException()
     pygame.midi.get_default_input_id()
     pygame.midi.get_default_output_id()
@@ -164,7 +211,9 @@
     pygame.midi.midis2events()
     pygame.midi.time()
 
-# mixer 混音器
+[:arrow_up: 返回](#contents)
+
+### mixer 混音器
     pygame.mixer.fadeout()
     pygame.mixer.find_channel()
     pygame.mixer.get_busy()
@@ -185,13 +234,17 @@
     pygame.mixer.stop()
     pygame.mixer.unpause()
 
-# mouse 鼠标
+[:arrow_up: 返回](#contents)
+
+### mouse 鼠标
     pygame.mouse.get_cursor()
     pygame.mouse.get_rel()
     pygame.mouse.set_cursor()
     pygame.mouse.set_visible()
 
-# pixel 像素
+[:arrow_up: 返回](#contents)
+
+### pixel 像素
     pygame.pixelcopy.array_to_surface()
     pygame.pixelcopy.make_surface()
     pygame.pixelcopy.map_array()
@@ -205,7 +258,9 @@
     pygame.scrap.put()
     pygame.set_error()
 
-# sndarray
+[:arrow_up: 返回](#contents)
+
+### sndarray
     pygame.sndarray.array()
     pygame.sndarray.get_arraytype()
     pygame.sndarray.get_arraytypes()
@@ -213,7 +268,9 @@
     pygame.sndarray.samples()
     pygame.sndarray.use_arraytype()
 
-# sprite  精灵
+[:arrow_up: 返回](#contents)
+
+### sprite  精灵
     pygame.sprite.GroupSingle()     #精灵组
     pygame.sprite.OrderedUpdates()  #
     pygame.sprite.collide_circle()  #圆形碰撞检测
@@ -225,7 +282,9 @@
     pygame.sprite.spritecollide()   #碰撞检测
     pygame.sprite.spritecollideany()
 
-# surface 表面 
+[:arrow_up: 返回](#contents)
+
+### surface 表面 
     pygame.surfarray.array2d()
     pygame.surfarray.array3d()
     pygame.surfarray.array_alpha()
@@ -242,7 +301,9 @@
     pygame.time.get_ticks()
     pygame.time.set_timer()
 
-#  transform 变形
+[:arrow_up: 返回](#contents)
+
+###  transform 变形
     pygame.transform.average_color()
     pygame.transform.average_surfaces()
     pygame.transform.chop()
@@ -255,3 +316,5 @@
     pygame.transform.set_smoothscale_backend()
     pygame.transform.smoothscale()
     pygame.transform.threshold()
+
+[:arrow_up: 返回](#contents)
