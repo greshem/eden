@@ -24,7 +24,8 @@
 + [表面](#surface)
 + [变形](#transform)
 
-### camera (照相机)
+### camera 
+    **照相机**
     pygame.camera.colorspace()
     pygame.camera.list_cameras()
 
@@ -131,7 +132,8 @@
     pygame.examples.vgrade.main()
 
 [:arrow_up: 返回](#contents)
-### font 字体
+### font
+    **字体**
     pygame.font.SysFont()
     pygame.font.get_default_font() #获取默认字体
     pygame.font.get_fonts() #获取字体
@@ -172,7 +174,8 @@
 
 
 [:arrow_up: 返回](#contents)
-### image 图片
+### image
+    **图片**
     pygame.image.frombuffer()
     pygame.image.fromstring()
     pygame.image.get_extended()
@@ -213,7 +216,8 @@
 
 [:arrow_up: 返回](#contents)
 
-### mixer 混音器
+### mixer
+    **混音器**
     pygame.mixer.fadeout()
     pygame.mixer.find_channel()
     pygame.mixer.get_busy()
@@ -236,7 +240,8 @@
 
 [:arrow_up: 返回](#contents)
 
-### mouse 鼠标
+### mouse 
+    **鼠标**
     pygame.mouse.get_cursor()
     pygame.mouse.get_rel()
     pygame.mouse.set_cursor()
@@ -244,7 +249,8 @@
 
 [:arrow_up: 返回](#contents)
 
-### pixel 像素
+### pixel 
+    **像素**
     pygame.pixelcopy.array_to_surface()
     pygame.pixelcopy.make_surface()
     pygame.pixelcopy.map_array()
@@ -270,7 +276,8 @@
 
 [:arrow_up: 返回](#contents)
 
-### sprite  精灵
+### sprite  
+    **精灵**
     pygame.sprite.GroupSingle()     #精灵组
     pygame.sprite.OrderedUpdates()  #
     pygame.sprite.collide_circle()  #圆形碰撞检测
@@ -284,7 +291,8 @@
 
 [:arrow_up: 返回](#contents)
 
-### surface 表面 
+### surface 
+    **表面**
     pygame.surfarray.array2d()
     pygame.surfarray.array3d()
     pygame.surfarray.array_alpha()
@@ -303,7 +311,8 @@
 
 [:arrow_up: 返回](#contents)
 
-###  transform 变形
+###  transform 
+    **变形**
     pygame.transform.average_color()
     pygame.transform.average_surfaces()
     pygame.transform.chop()
