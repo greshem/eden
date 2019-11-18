@@ -2,7 +2,7 @@
     scikit-image是一个开源Python包，适用于numpy数组。它实现了用于研究、教育和行业应用的算法和实用程序。
     即使对于那些刚接触Python生态系统的人，它也是一个相当简单直接的库。
 
-## python
+#### python代码
 ``` python
 from PIL import Image
 
