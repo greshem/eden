@@ -4,11 +4,13 @@
 
 # 2. Numpy
     Numpy是Python编程的核心库之一，并为数组提供支持。图像本质上是包含数据点像素的标准Numpy数组。
-    因此，通过使用基本的NumPy操作，例如切片、屏蔽和花式索引，我们可以修改图像的像素值。可以使用skimage加载图像并使用matplotlib显示图像。
+    因此，通过使用基本的NumPy操作，例如切片、屏蔽和花式索引，我们可以修改图像的像素值。
+    可以使用skimage加载图像并使用matplotlib显示图像。
 
 # 3. Scipy
     scipy是Python的另一个核心科学模块，如Numpy，可用于基本的图像处理和处理任务。
-    特别是，子模块scipy.ndimage提供了在n维NumPy数组上运行的函数。该软件包目前包括线性和非线性滤波、二进制形态、B样条插值和对象测量等功能。
+    特别是，子模块scipy.ndimage提供了在n维NumPy数组上运行的函数。该软件包目前包括线性和非线性滤波、二进制形态、
+    B样条插值和对象测量等功能。
 
 
 # 4. PIL / Pillow
@@ -37,7 +39,8 @@
 # 9. pgmagick
     pgmagick是GraphicsMagick库的基于Python的包装器。 
     GraphicsMagick图像处理系统有时被称为图像处理的瑞士军 刀。
-    它提供了强大而高效的工具和库集合，支持以超过88种主要格式读取、写入和操作图像，包括DPX，GIF，JPEG，JPEG-2000，PNG，PDF，PNM和TIFF等重要格式。
+    它提供了强大而高效的工具和库集合，支持以超过88种主要格式读取、写入和操作图像，包括DPX，GIF，JPEG，JPEG-2000，PNG，PDF，PNM和
+    TIFF等重要格式。
 
 # 10.Pycairo
     Pycairo是一组用于图形库cairo的python绑定。 
