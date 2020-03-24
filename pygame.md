@@ -27,7 +27,7 @@
 ### camera 
 **照相机**
 
-    pygame.camera.colorspace()
+    pygame.camera.colorspace()   #颜色空间
     pygame.camera.list_cameras()
 
 [:arrow_up: 返回](#contents)
@@ -57,14 +57,14 @@
     pygame.display.iconify()
     pygame.display.list_modes()
     pygame.display.mode_ok()
-    pygame.display.set_caption()
+    pygame.display.set_caption() #设置窗口名称
     pygame.display.set_gamma()
     pygame.display.set_gamma_ramp()
-    pygame.display.set_icon()
-    pygame.display.set_mode()
+    pygame.display.set_icon() #设置图标
+    pygame.display.set_mode() #设置屏幕大小
     pygame.display.set_palette()
-    pygame.display.toggle_fullscreen()
-    pygame.display.update()
+    pygame.display.toggle_fullscreen() #全屏
+    pygame.display.update()  #更新
 
 [:arrow_up: 返回](#contents)
 ### draw
@@ -81,13 +81,13 @@
 [:arrow_up: 返回](#contents)
 ### encode
     pygame.encode_file_path()
-    pygame.encode_string()
+    pygame.encode_string()  
 
 [:arrow_up: 返回](#contents)
 ### event 
-    pygame.event.Event()
-    pygame.event.clear()
-    pygame.event.event_name()
+    pygame.event.Event()  #事件
+    pygame.event.clear()  #事件清空
+    pygame.event.event_name() #事件名称
     pygame.event.get()
     pygame.event.get_blocked()
     pygame.event.get_grab()
@@ -98,7 +98,7 @@
     pygame.event.set_allowed()
     pygame.event.set_blocked()
     pygame.event.set_grab()
-    pygame.event.wait()
+    pygame.event.wait() #等待事件
 
 [:arrow_up: 返回](#contents)
 ### examples
@@ -136,7 +136,7 @@
 ### font
 **字体**
 
-    pygame.font.SysFont()
+    pygame.font.SysFont()   #系统字体
     pygame.font.get_default_font() #获取默认字体
     pygame.font.get_fonts() #获取字体
     pygame.font.match_font()
@@ -179,11 +179,11 @@
 ### image
 **图片**
 
-    pygame.image.frombuffer()
-    pygame.image.fromstring()
+    pygame.image.frombuffer()  #从内存创建图片
+    pygame.image.fromstring()  
     pygame.image.get_extended()
-    pygame.image.load()
-    pygame.image.save()
+    pygame.image.load()     #加载图片
+    pygame.image.save()     #图片保存
     pygame.image.tostring()
 
     pygame.init()
@@ -191,9 +191,9 @@
 
 [:arrow_up: 返回](#contents)
 ### key
-    pygame.key.get_focused()
+    pygame.key.get_focused()  #获取焦点
     pygame.key.get_mods()
-    pygame.key.get_pressed()
+    pygame.key.get_pressed()  #判断是否被按下
     pygame.key.get_repeat()
     pygame.key.name()
     pygame.key.set_mods()
@@ -202,7 +202,7 @@
 [:arrow_up: 返回](#contents)
 
 ### mask
-    pygame.mask.from_surface()
+    pygame.mask.from_surface()   # 掩码
     pygame.mask.from_threshold()
     pygame.math.disable_swizzling()
     pygame.math.enable_swizzling()
@@ -228,18 +228,18 @@
     pygame.mixer.get_num_channels()
     pygame.mixer.music.get_endevent()
     pygame.mixer.music.get_pos()
-    pygame.mixer.music.get_volume()
-    pygame.mixer.music.play()
+    pygame.mixer.music.get_volume()  # 获取当前音量大小 
+    pygame.mixer.music.play()  #播放音乐
     pygame.mixer.music.queue()
     pygame.mixer.music.rewind()
     pygame.mixer.music.set_endevent()
     pygame.mixer.music.set_pos()
-    pygame.mixer.music.set_volume()
+    pygame.mixer.music.set_volume()  #设置声音大小 
     pygame.mixer.pause()
     pygame.mixer.pre_init()
     pygame.mixer.set_num_channels()
     pygame.mixer.set_reserved()
-    pygame.mixer.stop()
+    pygame.mixer.stop()         # 声音停止
     pygame.mixer.unpause()
 
 [:arrow_up: 返回](#contents)
@@ -257,8 +257,8 @@
 ### pixel 
 **像素** 
 
-    pygame.pixelcopy.array_to_surface()
-    pygame.pixelcopy.make_surface()
+    pygame.pixelcopy.array_to_surface() 
+    pygame.pixelcopy.make_surface()  # 创建画屏
     pygame.pixelcopy.map_array()
     pygame.pixelcopy.surface_to_array()
 
@@ -286,7 +286,7 @@
 **精灵**
 
     pygame.sprite.GroupSingle()     #精灵组
-    pygame.sprite.OrderedUpdates()  #
+    pygame.sprite.OrderedUpdates()  #按顺序更新
     pygame.sprite.collide_circle()  #圆形碰撞检测
     pygame.sprite.collide_circle_ratio()
     pygame.sprite.collide_mask()    
