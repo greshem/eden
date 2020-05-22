@@ -1,7 +1,7 @@
 pygame编程开发
 =============
 
-pygame编程,尽可能多的例子,
+pygame编程,尽可能多的例子便于小朋友们入门,
 
 主页: [https://github.com/greshem/eden](https://github.com/greshem/eden)
 
@@ -13,13 +13,9 @@ pygame编程开发 ppygame编程开发
 通过pygame通过项目的方式,让小朋友们尽快的掌握python和游戏开发
 
 
-![截图](http://pythonturtle.org/images/screenshot2.gif)
 
 安装
 ------------
-
-安装程序
-[https://github.com/greshem/eden](https://github.com/greshem/eden) 或者 [GitHub](https://github.com/greshem/eden/releases).
 
 深度Linux:
 
@@ -44,13 +40,6 @@ windows7下
 #下载地址
 https://www.python.org/ftp/python/3.7.4/python-3.7.4.exe
 ```
-
-
-兼容性
--------------
-centos7下
-Python 3.6 and python2.7 系统通过测试
-Windows, macOS, Ubuntu Linux, and Fedora.有问题请联系
 
 开发
 -----------
